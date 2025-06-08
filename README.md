@@ -13,7 +13,7 @@ We propose a novel prompting technique for large reasoning models, called **Thou
 To evaluate our method on the medical diagnosis reasoning tasks:
 
 ```bash 
-python main.py --input_path data/dev.json --model llama2-13b --insert_method guided
+python thought_guidance.py
 ```
 
 Here we only show the examples of medical diagnosis scenarios in the paper. We will upload the fully organized code later.
