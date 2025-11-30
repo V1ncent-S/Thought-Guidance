@@ -1,8 +1,8 @@
-# Thought Guidance (TG)
+# Thought Guidance- Retrieval Augmented Generation (TG-RAG)
 
-This repository contains the official implementation for the paper: **"[Thought Guidance: Steering Large Reasoning Models Towards Expert-Level and Precise Thinking via Reasoning-Time Guidance]"**.
+This repository contains the official implementation for the paper: "TG-RAG: A Reasoning-Time Retrieval Framework for Steering Expert-Level Reasoning".
 
-Thought Guidance (TG) is a novel framework designed to enhance the reasoning capabilities of Large Language Models (LLMs) by dynamically steering their thought processes. Instead of relying on a single, static prompt, TG uses an **Expert Process Graph (EPG)** to provide iterative, state-aware guidance, ensuring the model's reasoning aligns with structured, expert-defined workflows. This approach significantly improves performance on complex tasks requiring deep reasoning, particularly in specialized domains.
+TG-RAG is a novel reasoning-time retrieval framework designed to mitigate "Cognitive Drift" in Large Reasoning Models (LRMs)  by proactively steering their thought processes. Unlike traditional RAG methods that provide passive context, TG-RAG employs a dynamic "Interrupt-Retrieve-Generate" (IRG) cycle. It retrieves procedural directives from a structured Expert Process Graph (EPG) —modeled as a "Chain-of-Trees" —and injects them directly into the model's active reasoning chain. This approach establishes a new paradigm of Thought Guidance (TG) , ensuring faithful adherence to expert-defined workflows in complex, specialized domains.
 
 ## Getting Started
 
@@ -27,7 +27,7 @@ The script accepts the following command-line arguments:
 | Argument          | Description                                                                                             | Required/Optional | Default |
 | ----------------- | ------------------------------------------------------------------------------------------------------- | ----------------- | ------- |
 | `model_path`      | The local path to your Hugging Face model checkpoint directory.                                         | **Required**      | `None`  |
-| `task_type`       | The evaluation task to perform. Choices: `medical`, `astronomy`, `law`, `math`, `qa`.                     | **Required**      | `None`  |
+| `task_type`       | The evaluation task to perform. Choices: `medical`, `astronomy`, `math`, `qa`.                     | **Required**      | `None`  |
 | `--num_samples`   | The number of data samples to process from the test set.                                                | Optional          | `100`   |
 
 ### Running an Evaluation

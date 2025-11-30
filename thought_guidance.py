@@ -344,37 +344,6 @@ if __name__ == "__main__":
         with open('Astronomy_result_TG.json', 'w', encoding='utf-8') as f:
                 json.dump(result_list, f, ensure_ascii=False, indent=4)
 
-    elif args.task_type == 'law':
-
-        from example.law_calculation import guide_system_prompt, GEN_PROMPT, guide_system_prompt_know, GEN_PROMPT_KNOW
-        from example.law_calculation import law_calculation_cot_tree, system
-
-        with open('/data/Law/3-7.json', 'r', encoding='utf-8') as file:
-            data_list = json.load(file)
-
-        result_list = []
-        for i, row in enumerate(data_list[:args.num_samples]):
-            prompt = '# 案情文本\n' + row['question']
-            answer = cot_guide_generate(system, prompt, law_calculation_cot_tree)
-            label = float(row['answer'].split("犯罪金额:")[1].split("元")[0])
-            pattern = r"{.*?}"
-            try:
-                res = answer.split('</think>')[-1].replace("\n", "")
-                json_str = re.findall(pattern, res)[0]
-                res = json.loads(repair_json(json_str))
-                score = float(res['答案'])
-            except:
-                score = -1
-            x = {}
-            x['system'] = system
-            x['input'] = row['question']
-            x['output'] = answer
-            x['score'] = score
-            x['label'] = label
-            result_list.append(x)
-            
-        with open('Law_result_TG.json', 'w', encoding='utf-8') as f:
-            json.dump(result_list, f, ensure_ascii=False, indent=4)
 
     elif args.task_type == 'math':
         from example.gsm8k import guide_system_prompt, GEN_PROMPT
