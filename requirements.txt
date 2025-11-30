@@ -1,0 +1,5 @@
+transformers
+vllm
+json_repair
+numpy
+pandas
