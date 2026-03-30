@@ -1,8 +1,8 @@
 # Thought Guidance- Retrieval Augmented Generation (TG-RAG)
 
-This repository contains the official implementation for the paper: "TG-RAG: A Reasoning-Time Retrieval Framework for Steering Expert-Level Reasoning".
+This repository contains the official implementation for the paper: "TG-RAG: A Retrieval-Augmented Framework for Reasoning Guidance in Specialized Domains".
 
-TG-RAG is a novel reasoning-time retrieval framework designed to mitigate "Cognitive Drift" in Large Reasoning Models (LRMs)  by proactively steering their thought processes. Unlike traditional RAG methods that provide passive context, TG-RAG employs a dynamic "Interrupt-Retrieve-Generate" (IRG) cycle. It retrieves procedural directives from a structured Expert Process Graph (EPG) —modeled as a "Chain-of-Trees" —and injects them directly into the model's active reasoning chain. This approach establishes a new paradigm of Thought Guidance (TG) , ensuring faithful adherence to expert-defined workflows in complex, specialized domains.
+TG-RAG is a novel reasoning-time retrieval framework designed to mitigate "Cognitive Drift" in Large Reasoning Models (LRMs)  by proactively steering their thought processes. Unlike traditional RAG methods that provide passive context, TG-RAG employs a dynamic "Interrupt-Retrieve-Generate" (IRG) cycle. It retrieves procedural directives from a structured Expert Procedure Graph (EPG) —modeled as a "Chain-of-Trees" —and injects them directly into the model's active reasoning chain. This approach establishes a new paradigm of Thought Guidance (TG) , ensuring faithful adherence to expert-defined domain SOPs in complex, specialized domains.
 
 ## Getting Started
 
